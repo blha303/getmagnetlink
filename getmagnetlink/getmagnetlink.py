@@ -87,7 +87,10 @@ def get_torrents(term):
     data = Soup(requests.get("https://torrentz.eu/search?" + urlencode({"q": term})).text, "html.parser")
     output = []
     for dt in data.findAll('dt'):
-        torhash = dt.find('a')["href"][1:]
+        try:
+            torhash = dt.find('a')["href"][1:]
+        except TypeError:
+            continue
         name = dt.text.split(" \xbb")[0]
         output.append(TorrentResult(name, torhash))
     return output

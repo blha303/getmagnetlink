@@ -10,7 +10,7 @@ setup(
     entry_points = {
         "console_scripts": ['getmagnetlink = getmagnetlink.getmagnetlink:main']
         },
-    version = "1.0.0",
+    version = "1.0.1",
     description = "Retrieves the torrent hash for the specified torrent",
     long_description = long_descr,
     author = "Steven Smith",
